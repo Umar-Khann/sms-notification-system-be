@@ -6,6 +6,8 @@ class Users::SessionsController < Devise::SessionsController
 
   private
     def respond_with(current_user, _opts = {})
+      SendSmsJob.perform_later(current_user.phone_number, "You have logged in successfully.")
+
       render json: {
         status: {
           code: 200, message: "Logged in successfully.",
@@ -21,6 +23,7 @@ class Users::SessionsController < Devise::SessionsController
       end
 
       if current_user
+        SendSmsJob.perform_later(current_user.phone_number, "You have logged out successfully.")
         render json: {
           status: 200,
           message: "Logged out successfully."
