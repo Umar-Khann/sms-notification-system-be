@@ -1,3 +1,6 @@
+inherit_from: .rubocop_todo.yml
+require: rubocop-rails
+
 # Omakase Ruby styling for Rails
 inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
@@ -6,3 +9,20 @@ inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 # # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
 # Layout/SpaceInsideArrayLiteralBrackets:
 #   Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2 # Use 2 spaces for indentation (default)
+
+Layout/FirstParameterIndentation:
+  Enabled: true
+  EnforcedStyle: consistent # Ensures parameters are consistently indented
+
+Layout/FirstArrayElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  Enabled: true
+  EnforcedStyle: consistent
+
