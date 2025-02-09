@@ -33,6 +33,11 @@ gem "devise"
 gem "devise-jwt"
 gem "jsonapi-serializer"
 
+gem "rubocop-rails", "~> 2.29", require: false
+
+gem 'sidekiq'
+gem 'twilio-ruby'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -44,8 +49,5 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "rubocop", require: false
+  gem 'dotenv-rails'
 end
-
-
-
-gem "rubocop-rails", "~> 2.29", require: false
