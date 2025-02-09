@@ -1,24 +1,59 @@
-# README
+# SMS Notification System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 📌 Project Overview
+This is a **Rails 7.2** application that provides real-time SMS notifications using **PostgreSQL** as the database.
 
-Things you may want to cover:
+## 🚀 Tech Stack
+- **Ruby:** 3.2.3
+- **Rails:** 7.2
+- **Database:** PostgreSQL
 
-* Ruby version
+---
 
-* System dependencies
+## 🛠️ Setup Instructions
+### 1️⃣ **Clone the Repository**
+```sh
+ git clone https://github.com/Umar-Khann/sms-notification-system-be.git
+ cd sms-notification-system
+```
 
-* Configuration
+### 2️⃣ **Install Dependencies**
+#### **Install Ruby & Rails Dependencies**
+```sh
+ bundle install
+```
 
-* Database creation
+### 3️⃣ **Setup the Database**
+```sh
+ rails db:create db:migrate
+```
 
-* Database initialization
+### 4️⃣ **Setup Credentials (if required)**
+If you need to edit Rails credentials (for API keys, etc.), use:
+```sh
+ EDITOR="code --wait" rails credentials:edit
+```
 
-* How to run the test suite
+### 5️⃣ **Run the Application**
+#### **Start the Rails Backend**
+```sh
+ rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+---
 
-* Deployment instructions
+## ✅ **Testing**
+Run the test suite:
+```sh
+ rspec
+```
 
-* ...
+---
+
+## 📄 **Environment Variables**
+Create a `.env` file (or use Rails credentials) and add:
+```sh
+ SMS_API_KEY=your-api-key
+```
+
+---
