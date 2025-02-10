@@ -1,7 +1,5 @@
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, :jwt_authenticatable, jwt_revocation_strategy: self
@@ -12,7 +10,7 @@ class User < ApplicationRecord
 
   private
 
-  def send_welcome_sms
-    SendSmsJob.perform_later(self.phone_number, "You have signed up successfully!")
-  end
+    def send_welcome_sms
+      SendSmsJob.perform_later(self.phone_number, "You have signed up successfully!")
+    end
 end
