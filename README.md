@@ -65,18 +65,12 @@ bundle exec sidekiq
 
 ---
 
-## ✅ **Testing**
-Run the test suite:
-```sh
- rspec
-```
-
----
-
 ## 📄 **Environment Variables**
 Create a `.env` file (or use Rails credentials) and add:
 ```sh
- SMS_API_KEY=your-api-key
+ TWILIO_ACCOUNT_SID=your_account_sid
+ TWILIO_AUTH_TOKEN=your_auth_token
+ TWILIO_PHONE_NUMBER=your_twilio_number
 ```
 
 ---
